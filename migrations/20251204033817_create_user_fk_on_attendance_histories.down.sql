@@ -1,0 +1,1 @@
+ALTER TABLE attendance_histories DROP CONSTRAINT fk_user;

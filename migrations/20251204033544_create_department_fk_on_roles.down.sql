@@ -1,0 +1,1 @@
+ALTER TABLE deparments DROP CONSTRAINT fk_department;

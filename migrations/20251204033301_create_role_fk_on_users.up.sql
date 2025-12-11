@@ -1,0 +1,2 @@
+ALTER TABLE users add CONSTRAINT fk_role FOREIGN KEY (role_id)
+REFERENCES roles(id) ON DELETE CASCADE;

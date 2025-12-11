@@ -1,0 +1,5 @@
+CREATE TABLE roles(
+    id VARCHAR(10) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    department_id VARCHAR(10) NOT NULL
+);
