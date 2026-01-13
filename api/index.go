@@ -15,7 +15,11 @@ import (
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	db, _ := config.ConnectDB()
+	db, err := config.ConnectDB()
+    if err != nil {
+        http.Error(w, "Database connection failed: "+err.Error(), http.StatusInternalServerError)
+        return
+    }
 
 	userRepo := repository.NewUserRepository(db)
 	userUseCase := usecase.NewUserUseCase(userRepo)
