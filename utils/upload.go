@@ -1,31 +1,34 @@
 package utils
 
 import (
-	"io"
+	"fmt"
 	"mime/multipart"
 	"os"
-	"path/filepath"
+
+	storage_go "github.com/supabase-community/storage-go"
 )
 
-func SaveFile(file multipart.File, fileName string) (string, error) {
-	uploadDir := "./uploads"
+func SaveFileToSupabase(file multipart.File, fileName string, fileHeader *multipart.FileHeader) (string, error) {
+	supabaseURL := os.Getenv("SUPABASE_URL")
+	supabaseKey := os.Getenv("SUPABASE_SERVICE_ROLE_KEY")
+	bucketName := os.Getenv("SUPABASE_BUCKET")
 
-	if _, err := os.Stat(uploadDir); os.IsNotExist(err) {
-		os.Mkdir(uploadDir, os.ModePerm)
+	client := storage_go.NewClient(supabaseURL, supabaseKey, nil)
+
+	opts := storage_go.FileOptions{
+		ContentType: ptr(fileHeader.Header.Get("Content-Type")),
 	}
 
-	path := filepath.Join(uploadDir, fileName)
-
-	out, err := os.Create(path)
+	_, err := client.UploadFile(bucketName, fileName, file, opts)
 	if err != nil {
-		return "", err
-	}
-	defer out.Close()
-
-	_, err = io.Copy(out, file)
-	if err != nil {
-		return "", err
+		return "", fmt.Errorf("failed to upload to supabase: %v", err)
 	}
 
-	return "/uploads/" + fileName, nil
+	publicURL := fmt.Sprintf("%s/storage/v1/object/public/%s/%s", supabaseURL, bucketName, fileName)
+
+	return publicURL, nil
+}
+
+func ptr(s string) *string {
+	return &s
 }

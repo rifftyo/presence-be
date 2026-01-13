@@ -38,7 +38,7 @@ func (h *UserHandler) Register(c *fiber.Ctx) error {
 
 		fileName := fmt.Sprintf("%d-%s", time.Now().Unix(), fileHeader.Filename)
 
-		filePath, err := utils.SaveFile(file, fileName)
+		filePath, err := utils.SaveFileToSupabase(file, fileName, fileHeader)
 		if err != nil {
 			return c.Status(400).JSON(fiber.Map{"error": err.Error()})
 		}

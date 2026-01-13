@@ -49,12 +49,12 @@ func (a *AbsenceHandler) CheckIn(c *fiber.Ctx) error {
 
 		fileName := fmt.Sprintf("%d-%s", time.Now().Unix(), fileHeader.Filename)
 
-		filePath, err := utils.SaveFile(file, fileName)
-		if err != nil {
-			return c.Status(400).JSON(fiber.Map{"error": err.Error()})
-		}
+		filePath, err := utils.SaveFileToSupabase(file, fileName, fileHeader)
+    if err != nil {
+        return c.Status(500).JSON(fiber.Map{"error": "Failed to upload to cloud: " + err.Error()})
+    }
 
-		req.CheckInPhoto = filePath
+    req.CheckInPhoto = filePath
 	}
 
 	userID := c.Locals("userID").(string)
@@ -96,7 +96,7 @@ func (a *AbsenceHandler) CheckOut(c *fiber.Ctx) error {
 
 		fileName := fmt.Sprintf("%d-%s", time.Now().Unix(), fileHeader.Filename)
 
-		filePath, err := utils.SaveFile(file, fileName)
+		filePath, err := utils.SaveFileToSupabase(file, fileName, fileHeader)
 		if err != nil {
 			return c.Status(400).JSON(fiber.Map{"error": err.Error()})
 		}
