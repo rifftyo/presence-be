@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/rifftyo/presence-be/internal/delivery/http/request"
-	"github.com/rifftyo/presence-be/internal/delivery/http/response"
-	"github.com/rifftyo/presence-be/internal/usecase"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/request"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/response"
+	"github.com/rifftyo/presence-be/pkg/usecase"
 	"github.com/rifftyo/presence-be/utils"
 )
 

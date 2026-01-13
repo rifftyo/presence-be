@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/rifftyo/presence-be/internal/entity"
+	"github.com/rifftyo/presence-be/pkg/entity"
 	"gorm.io/gorm"
 )
 

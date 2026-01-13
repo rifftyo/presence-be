@@ -4,8 +4,8 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/rifftyo/presence-be/internal/delivery/http/handler"
-	"github.com/rifftyo/presence-be/internal/delivery/http/middleware"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/handler"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/middleware"
 )
 
 func SetUpRoutes(

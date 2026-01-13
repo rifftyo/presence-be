@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/rifftyo/presence-be/internal/entity"
+import "github.com/rifftyo/presence-be/pkg/entity"
 
 type UserRepository interface {
 	Create(user *entity.User) error

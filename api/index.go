@@ -7,11 +7,11 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/adaptor"
 	"github.com/rifftyo/presence-be/config"
 
-	delivery "github.com/rifftyo/presence-be/internal/delivery/http"
+	delivery "github.com/rifftyo/presence-be/pkg/delivery/http"
 
-	"github.com/rifftyo/presence-be/internal/delivery/http/handler"
-	"github.com/rifftyo/presence-be/internal/repository"
-	"github.com/rifftyo/presence-be/internal/usecase"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/handler"
+	"github.com/rifftyo/presence-be/pkg/repository"
+	"github.com/rifftyo/presence-be/pkg/usecase"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {

@@ -6,10 +6,10 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/rifftyo/presence-be/internal/delivery/http/request"
-	"github.com/rifftyo/presence-be/internal/delivery/http/response"
-	"github.com/rifftyo/presence-be/internal/entity"
-	"github.com/rifftyo/presence-be/internal/repository"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/request"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/response"
+	"github.com/rifftyo/presence-be/pkg/entity"
+	"github.com/rifftyo/presence-be/pkg/repository"
 )
 
 type absenceUseCase struct {

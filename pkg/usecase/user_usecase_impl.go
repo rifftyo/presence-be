@@ -4,9 +4,9 @@ import (
 	"errors"
 
 	"github.com/google/uuid"
-	"github.com/rifftyo/presence-be/internal/delivery/http/request"
-	"github.com/rifftyo/presence-be/internal/entity"
-	"github.com/rifftyo/presence-be/internal/repository"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/request"
+	"github.com/rifftyo/presence-be/pkg/entity"
+	"github.com/rifftyo/presence-be/pkg/repository"
 	"github.com/rifftyo/presence-be/utils"
 	"golang.org/x/crypto/bcrypt"
 )

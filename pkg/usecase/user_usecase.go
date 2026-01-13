@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"github.com/rifftyo/presence-be/internal/delivery/http/request"
-	"github.com/rifftyo/presence-be/internal/entity"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/request"
+	"github.com/rifftyo/presence-be/pkg/entity"
 )
 
 type UserUseCase interface {

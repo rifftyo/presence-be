@@ -3,10 +3,10 @@ package main
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/rifftyo/presence-be/config"
-	"github.com/rifftyo/presence-be/internal/delivery/http"
-	"github.com/rifftyo/presence-be/internal/delivery/http/handler"
-	"github.com/rifftyo/presence-be/internal/repository"
-	"github.com/rifftyo/presence-be/internal/usecase"
+	"github.com/rifftyo/presence-be/pkg/delivery/http"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/handler"
+	"github.com/rifftyo/presence-be/pkg/repository"
+	"github.com/rifftyo/presence-be/pkg/usecase"
 )
 
 func main() {

@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"github.com/rifftyo/presence-be/internal/delivery/http/response"
-	"github.com/rifftyo/presence-be/internal/entity"
+	"github.com/rifftyo/presence-be/pkg/delivery/http/response"
+	"github.com/rifftyo/presence-be/pkg/entity"
 )
 
 func MapUserToUserResponse(u *entity.User) response.User {
